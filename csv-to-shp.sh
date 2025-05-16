@@ -1,9 +1,10 @@
-# ! /bin/bash
+#! /bin/bash
 
 # Convert csv files to shape using qgis_process
 
-cd "$(realpath $1)"
-
+if [ -n "$1" ]
+then
+   cd "$(realpath $1)"
 for file in *; do
 
     if [ -f "$file" ]; then
@@ -21,3 +22,7 @@ for file in *; do
         fi
     fi
 done
+
+else
+   echo "Usage: ./csv-to-shp.sh dirname"
+fi
