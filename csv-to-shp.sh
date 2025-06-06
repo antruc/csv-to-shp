@@ -2,7 +2,7 @@
 
 # Convert csv files to shape using qgis_process
 
-if [[ -n "$1" ]] then
+if [[ -n "$1" ]]; then
     cd "$(realpath $1)"
     for file in *; do
 	if [ -f "$file" ]; then
